@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 83.4, "left": 281.2, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 97.8, "left": -78.71, "attrs": {} },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -106.15,
+      "left": 23.91,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -108.63,
+      "left": 429.92,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 103.46,
+      "left": 341.31,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 185.86,
+      "left": 326.07,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 186.74,
+      "left": 441.32,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "led1:A", "bb1:7t.b", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:6t.b", "", [ "$bb" ] ],
+    [ "r1:1", "bb1:6t.d", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:6b.h", "", [ "$bb" ] ],
+    [ "r2:1", "bb1:18t.d", "", [ "$bb" ] ],
+    [ "r2:2", "bb1:18b.h", "", [ "$bb" ] ],
+    [ "bb1:6b.j", "bb1:bp.5", "black", [ "v0" ] ],
+    [ "bb1:18b.j", "bb1:bp.15", "black", [ "v0" ] ],
+    [ "bb1:tp.25", "bb1:bp.25", "black", [ "v0" ] ],
+    [ "bb1:tn.22", "bb1:bn.22", "green", [ "v0" ] ],
+    [ "bz1:2", "bb1:18t.b", "black", [ "v0" ] ],
+    [ "bz1:1", "bb1:14t.b", "violet", [ "v9.46", "h-23.86" ] ],
+    [ "pir1:GND", "bb1:tp.18", "black", [ "v27.13", "h431.8" ] ],
+    [ "pir1:OUT", "bb1:tn.17", "#8f4814", [ "v39.44", "h424.81" ] ],
+    [ "pir1:VCC", "uno:2", "red", [ "v57.04", "h96.74", "v-1.76" ] ],
+    [ "uno:13", "bb1:14t.c", "violet", [ "v-34.88", "h216.98", "v78.29" ] ],
+    [ "uno:12", "bb1:7t.d", "blue", [ "v-44.56", "h218.04", "v100.29" ] ],
+    [ "uno:5V", "bb1:bn.24", "red", [ "v35.98", "h490.76" ] ],
+    [ "uno:GND.2", "bb1:bp.23", "black", [ "v28.94", "h475.11" ] ]
+  ],
+  "dependencies": {}
+}
